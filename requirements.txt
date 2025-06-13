@@ -1,0 +1,1 @@
+torch\nfacenet-pytorch\nopencv-python-headless\nstreamlit\npyngrok\nPillow
