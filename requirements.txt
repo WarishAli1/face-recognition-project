@@ -1,1 +1,6 @@
-torch\nfacenet-pytorch\nopencv-python-headless\nstreamlit\npyngrok\nPillow
+torch
+facenet-pytorch
+opencv-python-headless
+streamlit
+pyngrok
+Pillow
