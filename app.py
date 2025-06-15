@@ -94,4 +94,4 @@ input_img = st.camera_input("Take a photo")
 if input_img:
     img = Image.open(input_img).convert("RGB")
     result_img = recognize_faces(img)
-    st.image(result_img, caption=f"Detected Faces with {name_input}")
+    st.image(result_img, caption=f"Detected Faces with name")
