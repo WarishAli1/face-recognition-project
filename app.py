@@ -7,8 +7,10 @@ from datetime import datetime
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 mtcnn = MTCNN(keep_all=True, device=device)
 model = InceptionResnetV1(pretrained='vggface2').eval().to(device)
-EMBEDDINGS_FILE = '/content/drive/MyDrive/face_recognition/embeddings.pth'
-USER_IMAGE_DIR = '/content/drive/MyDrive/face_recognition/saved_users'
+BASE_DIR = '/content/drive/MyDrive/face_recognition' if os.path.exists('/content/drive') else 'face_recognition_data'
+os.makedirs(BASE_DIR, exist_ok=True)
+EMBEDDINGS_FILE = os.path.join(BASE_DIR, 'embeddings.pth')
+USER_IMAGE_DIR = os.path.join(BASE_DIR, 'saved_users')
 os.makedirs(USER_IMAGE_DIR, exist_ok=True)
 if 'known_embeddings' not in st.session_state:
     if os.path.exists(EMBEDDINGS_FILE):
